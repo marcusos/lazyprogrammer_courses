@@ -1,0 +1,23 @@
+Sensitivy (Recall)
+p(pred=1 | disease=1) = TP/N / FN+TP/N = TP/FN+TP
+
+Specificity
+p(pred=0 | disease=0) = TN/N / TN+FP/N = TN/TN+FP
+
+Precision
+p(disease=1 | pred=1) = p(disease=1, pred=1) / p(pred=1) = TP/N / TP+FP/N = TP/TP+FP
+
+// Guassian
+IID - independent identically distributed
+    -identically: All Guassian, withe same mean/variance
+    -independent: 
+        Coin flip
+        p(T | HHHHHHHHH) = 0.5 (Não adianta continua sendo 0.5)
+        Means to: joint probaility = multiplicacao das diferentes probabilidades
+
+Likelihood
+    Probabilidade do dataset dado um certo parametro
+    p(x1,...xn | Media)
+
+Maxlikelihood
+    Qual o melhor formato da 'media' onde o likelihood é maximizado
