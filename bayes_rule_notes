@@ -1,3 +1,6 @@
+// Bayes method
+
+// Information retrival 
 Sensitivy (Recall)
 p(pred=1 | disease=1) = TP/N / FN+TP/N = TP/FN+TP
 
@@ -21,3 +24,51 @@ Likelihood
 
 Maxlikelihood
     Qual o melhor formato da 'media' onde o likelihood é maximizado
+
+Problemaas 
+    - "Precisamos colher mais dados para ter sentido"
+    - Mas qual seria esse 'tanto' de dados?
+    - Bayesian leva em conta esses problemas
+
+// Maximum likelihood CTR
+- CTR = cloin flip (bernouli distribution)
+- Cross-entropy = log of (Bernouli Likelihood)
+- Bernouli
+    p(Cara) = p, p(Coroa) = 1 - p
+- Bernouli só tem um parametro, Gaussian tem 2 (mu,pi)
+    = L(Ncara, Ncoroa) = p^ncara * (1-p)^ncoroa
+    Fazendo a derivacao pelo Log 
+        temos que p = Ncara / Ncara + Ncoroa
+Problem: Sabemos que 1/10 é pior que 10/100 que é pior que 100/1000...
+    Todos irão dar o mesmo P
+- Como resolver na forma frequentista vs na forma bayesiana
+
+//Confidence interval
+- Frequentist way to dealing with uncertainty
+- Sum of IID tends to Gaussian = f(mean, var/n)
+    - More samples, variance of Mu-hat increase
+    - var = std^2
+- Muhat - Mu ~ f(0, var/n)
+- significance level = a
+- confidence leve = 1 - a
+
+Confidence interval = Xleft + Xright (Area = 0.95)
+CDF = integral de -infito -> X p(x)dx (Cumulative distributed function)
+PPF = inverse of CDF
+5% tail -> 2.5% each tail
+CDF = 1 - 0.05/2 = 0.975
+Scipy = Scipy.stats.norm.ppf
+Confidence interval  = Muhat + Zleft*StdError = Muhat + Zright*StdError
+StrError = StdHat/Raiz(N)
+
+- Bernouli variance
+    Var(x) = p(1-p)
+    Std = Raiz(p(1-p))
+
+// Bayesian vs Frequentist
+Frequentist
+- ParamHat = argmax P(X | Param)
+    - param is fixed
+Bayes
+- P(Param | X)
+    Data is fixed
